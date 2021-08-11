@@ -1,0 +1,8 @@
+# Noise2Noise: Learning Image Restoration without Clean Data
+## Summary
+Published in 2018, and is the basis of subsequent Noise2xxx implementations. Simply put, Noise2Noise aims to take noisy images as inputs and output clean images, without having access to clean reference images during training. This is unlike traditional image denoising methods, where there is access to clean reference images  It utilises a U-Net architecture with skip connections. It is assumed that for multiple noisy images with the same underlying signal, the mean (L2), median (L1) or mode (~L0) value (depending on the nature of dataset used) for each pixel of the signal would be approximately close to the true value of the pixel. Therefore the method does not require an explicit noise model and is applicable to our use case since there are no reference images. Original paper [here](https://arxiv.org/abs/1803.04189). 
+
+## Adaptation to EM Image Denoising
+Though the original paper aims to denoise images, it focuses on photon-based and MRI images. However, [this paper](https://github.com/ZhenyuTan/Noise2Noise-Cryo-EM-image-denoising/blob/master/eecs504_report.pdf) is specialised for denoising cryo-EM images, hence more aligned towards the noise that would be typically encountered in TEM images. Therefore the aforementioned implementation is used as the base.
+
+Code adapted from [here](https://github.com/ZhenyuTan/Noise2Noise-Cryo-EM-image-denoising/tree/master/noise2noise_model_for_Cryo_crop640).
