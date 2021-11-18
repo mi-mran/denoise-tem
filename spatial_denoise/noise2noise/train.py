@@ -3,8 +3,8 @@ import torch.nn as nn
 from torch.optim import Adam, lr_scheduler
 import os 
 import torchvision.transforms.functional as tvF
-from .base_model.unet_model import UNet
-from .base_model.Config import Config as conf
+from unet_model import UNet
+from Config import Config as conf
 import time
 from data_set_builder import TrainingDataset
 from torch.utils.data import Dataset, DataLoader
@@ -26,7 +26,7 @@ def train():
     dataset = TrainingDataset(conf.training_even,conf.training_odd,conf.crop_img_size)
     dataset_length = len(dataset)
     train_loader = DataLoader(dataset, batch_size=4, shuffle=True,num_workers=4)
-    model = UNet(in_channels =conf.img_channel,out_channels=conf.img_channel)
+    model = UNet(in_channels=conf.img_channel, out_channels=conf.img_channel)
     criterion = nn.MSELoss()
     model = model.to(device)
     optim = Adam(model.parameters(), lr = conf.learning_rate, betas=(0.9, 0.999), eps=1e-8, weight_decay=0, amsgrad=True)

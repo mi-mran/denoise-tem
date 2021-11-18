@@ -17,7 +17,7 @@ def test():
     print('Loading model from: {}'.format(conf.model_path_test))
     model = UNet(in_channels=conf.img_channel,out_channels=conf.img_channel)
     print('loading model')
-    model.load_state_dict(torch.load(conf.model_path_test))
+    model.load_state_dict(torch.load(conf.model_path_test), strict=False)
     model.eval()
     model.to(device)
     result_dir = conf.denoised_dir
@@ -34,8 +34,8 @@ def test():
         
         fname = os.path.splitext(img_name)[0]
         
-        source_img.save(os.path.join(result_dir, f'{fname}-noisy.png'))
-        denoised_result.save(os.path.join(result_dir, f'{fname}-denoised.png'))       
+        source_img.save(os.path.join(result_dir, f'{fname}-noisy.tif'))
+        denoised_result.save(os.path.join(result_dir, f'{fname}-denoised.tif'))       
 
 
 def main():
