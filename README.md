@@ -21,6 +21,25 @@ It was important to compare the results of consecutive averaged frames in a temp
 1. spatial_denoise (methods used for denoising single frames)
 2. utils (contains scripts for data / image manipulation / visualisation)
 
+## Getting Started
+To download this repo:
+
+```shell
+$ git clone https://github.com/mi-mran/denoise-tem.git
+```
+To update your local repo:
+```shell
+$ git pull origin master
+```
+
+Please ensure that Python 3 and MATLAB is installed. Python 3.6 and MATLAB R2021a was used.
+
+To install the Python packages for the respective models:
+
+```shell
+$ pip install -r requirements.txt
+```
+
 ## About
 This is my Final Year Project at the School of Materials Science and Engineering, Nanyang Technological University, supervised by Asst. Prof. Martial Duchamp. For more information or clarifications, please do contact me.
 
