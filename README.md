@@ -41,6 +41,4 @@ $ pip install -r requirements.txt
 ```
 
 ## About
-This is my Final Year Project at the School of Materials Science and Engineering, Nanyang Technological University, supervised by Asst. Prof. Martial Duchamp. For more information or clarifications, please do contact me.
-
-A work in progress.
+This is my Final Year Project at the School of Materials Science and Engineering, Nanyang Technological University, supervised by Asst. Prof. Martial Duchamp. For more information or clarifications, [please drop me an email](mailto:mxk8778@mavs.uta.edu).
